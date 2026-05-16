@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Imperial Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .dash-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            padding: 120px 0 50px;
+        }
+        .dash-sidebar {
+            height: fit-content;
+        }
+        .dash-nav ul li a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            border-radius: 12px;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+        .dash-nav ul li a:hover, .dash-nav ul li a.active {
+            background: var(--glass-bg);
+            color: var(--primary);
+        }
+        .dash-card {
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .stat-badge {
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .badge-green { background: rgba(0, 255, 179, 0.1); color: var(--primary); }
+        .badge-blue { background: rgba(0, 200, 255, 0.1); color: #00c8ff; }
+        .badge-yellow { background: rgba(255, 200, 0, 0.1); color: #ffc800; }
+    </style>
+</head>
+<body>
+
+    <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <header id="main-header" class="scrolled">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+            </div>
+            <div class="header-btns">
+                <div style="display: flex; align-items: center; gap: 15px; margin-right: 20px;">
+                    <span style="text-align: right;">
+                        <div style="font-weight: 700;">Zolex</div>
+                        <div style="font-size: 0.8rem; color: var(--primary);">Whitelist</div>
+                    </span>
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--primary);">
+                </div>
+                <a href="login.html" class="btn btn-outline" style="padding: 10px 20px;"><i class="ph ph-sign-out"></i> Log ud</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dash-container">
+            <aside class="dash-sidebar">
+                <div class="glass dash-nav" style="padding: 20px;">
+                    <ul>
+                        <li><a href="#" class="active"><i class="ph ph-user-circle"></i> Min Karakter</a></li>
+                        <li><a href="#"><i class="ph ph-car"></i> Mine Køretøjer</a></li>
+                        <li><a href="#"><i class="ph ph-bank"></i> Bank & Penge</a></li>
+                        <li><a href="#"><i class="ph ph-identification-badge"></i> Ansøgninger</a></li>
+                        <li><a href="#"><i class="ph ph-warning-circle"></i> Advarsler (0)</a></li>
+                        <li><a href="#"><i class="ph ph-gear"></i> Indstillinger</a></li>
+                    </ul>
+                </div>
+
+                <div class="glass" style="margin-top: 30px; padding: 25px;">
+                    <h4 style="margin-bottom: 15px; color: var(--primary);">Server Info</h4>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem;">
+                        <span style="color: var(--text-gray);">Playtime:</span>
+                        <span>482 timer</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9rem;">
+                        <span style="color: var(--text-gray);">Job:</span>
+                        <span>Mekaniker</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span style="color: var(--text-gray);">Sidst set:</span>
+                        <span>I dag, 14:30</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="dash-main">
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
+                    <div class="glass dash-card">
+                        <div style="color: var(--text-gray); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px;">Kontanter</div>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: #00ffb3;">$14,250</div>
+                    </div>
+                    <div class="glass dash-card">
+                        <div style="color: var(--text-gray); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px;">Bankbog</div>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: #00c8ff;">$1,245,000</div>
+                    </div>
+                    <div class="glass dash-card">
+                        <div style="color: var(--text-gray); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px;">Køretøjer</div>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: #ffc800;">12 Stk.</div>
+                    </div>
+                </div>
+
+                <div class="glass dash-card">
+                    <h3 style="margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
+                        <i class="ph ph-car" style="color: var(--primary);"></i> Seneste Køretøjer
+                    </h3>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead style="border-bottom: 1px solid var(--glass-border); text-align: left;">
+                            <tr>
+                                <th style="padding: 15px 0; color: var(--text-gray); font-size: 0.9rem;">Model</th>
+                                <th style="padding: 15px 0; color: var(--text-gray); font-size: 0.9rem;">Nummerplade</th>
+                                <th style="padding: 15px 0; color: var(--text-gray); font-size: 0.9rem;">Status</th>
+                                <th style="padding: 15px 0; color: var(--text-gray); font-size: 0.9rem; text-align: right;">Handling</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 15px 0; font-weight: 600;">Lamborghini Huracan</td>
+                                <td style="padding: 15px 0; font-family: monospace;">IMP 001</td>
+                                <td style="padding: 15px 0;"><span class="stat-badge badge-green">GARAGE</span></td>
+                                <td style="padding: 15px 0; text-align: right;"><button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.75rem;">GPS</button></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 15px 0; font-weight: 600;">Audi RS6 Avant</td>
+                                <td style="padding: 15px 0; font-family: monospace;">ROYAL 22</td>
+                                <td style="padding: 15px 0;"><span class="stat-badge badge-blue">BESLAGLAGT</span></td>
+                                <td style="padding: 15px 0; text-align: right;"><button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.75rem;">Info</button></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px 0; font-weight: 600;">Mercedes G63 AMG</td>
+                                <td style="padding: 15px 0; font-family: monospace;">BOSS 1</td>
+                                <td style="padding: 15px 0;"><span class="stat-badge badge-green">GARAGE</span></td>
+                                <td style="padding: 15px 0; text-align: right;"><button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.75rem;">GPS</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="glass dash-card">
+                    <h3 style="margin-bottom: 25px;">Seneste Ansøgninger</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: rgba(255,255,255,0.02); border-radius: 10px;">
+                        <div>
+                            <div style="font-weight: 600;">Politiet (LSPD)</div>
+                            <div style="font-size: 0.8rem; color: var(--text-gray);">Sendt i går, 18:45</div>
+                        </div>
+                        <span class="stat-badge badge-yellow">AFVENTER</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

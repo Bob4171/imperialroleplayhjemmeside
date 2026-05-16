@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butik | Imperial Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <header id="main-header" class="scrolled">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Logo" style="height: 40px;"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="rules.html">Regelsæt</a></li>
+                    <li><a href="applications.html">Ansøgninger</a></li>
+                    <li><a href="staff.html">Staff Team</a></li>
+                    <li><a href="factions.html">Fraktioner</a></li>
+                    <li><a href="shop.html" class="active">Butik</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 180px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Imperial <span class="gradient-text">Store</span></h2>
+                <p style="color: var(--text-dim);">Støt serveren og få unikke fordele in-game.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="glass" style="padding: 0; overflow: hidden; position: relative;">
+                    <div style="height: 200px; background: rgba(0,255,179,0.05); display: flex; align-items: center; justify-content: center;">
+                        <i class="ph ph-crown" style="font-size: 5rem; color: var(--primary); opacity: 0.3;"></i>
+                        <div style="position: absolute; top: 20px; right: 20px; background: var(--primary); color: #000; padding: 4px 12px; border-radius: 6px; font-weight: 800; font-size: 0.7rem;">MEST POPULÆR</div>
+                    </div>
+                    <div style="padding: 32px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 8px;">VIP Medlemskab</h3>
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Få adgang til VIP biler, prioritet i køen og specielle chat-tags.</p>
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 24px;">99 DKK <span style="font-size: 1rem; color: var(--text-dim); font-weight: 400;">/ md.</span></div>
+                        <button class="btn btn-primary" style="width: 100%; justify-content: center;">Læg i Kurv</button>
+                    </div>
+                </div>
+
+                <div class="glass" style="padding: 0; overflow: hidden;">
+                    <div style="height: 200px; background: rgba(0,229,255,0.05); display: flex; align-items: center; justify-content: center;">
+                        <i class="ph ph-coins" style="font-size: 5rem; color: #00e5ff; opacity: 0.3;"></i>
+                    </div>
+                    <div style="padding: 32px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 8px;">5000 Coins</h3>
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Coins kan bruges til at købe unikke items og opgraderinger i vores in-game shop.</p>
+                        <div style="font-size: 2rem; font-weight: 800; color: #00e5ff; margin-bottom: 24px;">150 DKK</div>
+                        <button class="btn btn-primary" style="width: 100%; justify-content: center; background: #00e5ff;">Læg i Kurv</button>
+                    </div>
+                </div>
+
+                <div class="glass" style="padding: 0; overflow: hidden;">
+                    <div style="height: 200px; background: rgba(255,200,0,0.05); display: flex; align-items: center; justify-content: center;">
+                        <i class="ph ph-car-profile" style="font-size: 5rem; color: #ffc800; opacity: 0.3;"></i>
+                    </div>
+                    <div style="padding: 32px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Custom Import</h3>
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Vælg en valgfri import bil fra vores store katalog af high-end køretøjer.</p>
+                        <div style="font-size: 2rem; font-weight: 800; color: #ffc800; margin-bottom: 24px;">250 DKK</div>
+                        <button class="btn btn-primary" style="width: 100%; justify-content: center; background: #ffc800;">Læg i Kurv</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 150px; padding: 40px 0; text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2026 Imperial Roleplay. Alle rettigheder forbeholdes.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

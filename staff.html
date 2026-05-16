@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Team | Imperial Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <header id="main-header" class="scrolled">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Logo" style="height: 40px;"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="rules.html">Regelsæt</a></li>
+                    <li><a href="applications.html">Ansøgninger</a></li>
+                    <li><a href="staff.html" class="active">Staff Team</a></li>
+                    <li><a href="factions.html">Fraktioner</a></li>
+                    <li><a href="shop.html">Butik</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 180px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vores <span class="gradient-text">Staff Team</span></h2>
+                <p style="color: var(--text-dim);">Menneskene bag Imperial Roleplay, der sikrer dig den bedste oplevelse.</p>
+            </div>
+
+            <div class="card-grid">
+                <!-- Ledelse -->
+                <div class="staff-card glass">
+                    <div class="staff-role">Founder / Ejer</div>
+                    <div class="avatar-wrapper">
+                        <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Zolex" alt="Zolex">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Zolex</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Overordnet ansvarlig for serverens drift og udvikling.</p>
+                    <a href="#" class="btn btn-discord" style="width: 100%; justify-content: center; font-size: 0.8rem;">Discord Kontakt</a>
+                </div>
+
+                <div class="staff-card glass">
+                    <div class="staff-role">Management</div>
+                    <div class="avatar-wrapper">
+                        <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Kasper" alt="Kasper">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Kasper</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Ansvarlig for økonomi og daglig ledelse af teamet.</p>
+                    <a href="#" class="btn btn-discord" style="width: 100%; justify-content: center; font-size: 0.8rem;">Discord Kontakt</a>
+                </div>
+
+                <div class="staff-card glass">
+                    <div class="staff-role">Head Admin</div>
+                    <div class="avatar-wrapper">
+                        <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Morten" alt="Morten">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Morten</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Håndterer de mest komplekse sager og klager.</p>
+                    <a href="#" class="btn btn-discord" style="width: 100%; justify-content: center; font-size: 0.8rem;">Discord Kontakt</a>
+                </div>
+
+                <div class="staff-card glass">
+                    <div class="staff-role">Admin</div>
+                    <div class="avatar-wrapper">
+                        <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Mikkel" alt="Mikkel">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Mikkel</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Sikrer at reglerne overholdes og hjælper spillere.</p>
+                    <a href="#" class="btn btn-discord" style="width: 100%; justify-content: center; font-size: 0.8rem;">Discord Kontakt</a>
+                </div>
+
+                <div class="staff-card glass">
+                    <div class="staff-role">Moderator</div>
+                    <div class="avatar-wrapper">
+                        <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Sarah" alt="Sarah">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Sarah</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Aktiv i supporten og holder øje med chatten.</p>
+                    <a href="#" class="btn btn-discord" style="width: 100%; justify-content: center; font-size: 0.8rem;">Discord Kontakt</a>
+                </div>
+
+                <div class="staff-card glass">
+                    <div class="staff-role">Supporter</div>
+                    <div class="avatar-wrapper">
+                        <img src="https://api.dicebear.com/7.x/bottts-neutral/svg?seed=Mads" alt="Mads">
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Mads</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 24px;">Hjælper nye spillere godt i gang på serveren.</p>
+                    <a href="#" class="btn btn-discord" style="width: 100%; justify-content: center; font-size: 0.8rem;">Discord Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 150px;">
+        <div class="container" style="text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+            &copy; 2026 Imperial Roleplay. Alle rettigheder forbeholdes.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansøgninger | Imperial Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <header id="main-header" class="scrolled">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="rules.html">Regelsæt</a></li>
+                    <li><a href="applications.html" class="active">Ansøgninger</a></li>
+                    <li><a href="staff.html">Staff Team</a></li>
+                    <li><a href="factions.html">Fraktioner</a></li>
+                    <li><a href="shop.html">Butik</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="header-btns">
+                <a href="login.html" class="btn btn-outline"><i class="ph ph-user"></i> Login</a>
+                <a href="fiverp://connect/imperialrp" class="btn btn-primary"><i class="ph ph-play"></i> Join Server</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 150px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Ansøg om <span class="gradient-text">Optagelse</span></h1>
+                <p style="color: var(--text-gray);">Vælg den kategori du ønsker at ansøge til.</p>
+            </div>
+
+            <div class="shop-grid">
+                <!-- Whitelist -->
+                <div class="shop-card glass">
+                    <div class="shop-img"><i class="ph ph-identification-card"></i></div>
+                    <div class="shop-info">
+                        <h3>Whitelist Ansøgning</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">For at spille på Imperial skal du være whitelisted. Vis os dit RP niveau!</p>
+                        <div style="margin: 20px 0; display: flex; align-items: center; gap: 10px;">
+                            <span style="background: rgba(0, 255, 179, 0.1); color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">ÅBEN</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Start Ansøgning</button>
+                    </div>
+                </div>
+
+                <!-- Politiet -->
+                <div class="shop-card glass">
+                    <div class="shop-img"><i class="ph ph-shield-chevron"></i></div>
+                    <div class="shop-info">
+                        <h3>Politiet (LSPD)</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">Vil du bekæmpe kriminalitet? Ansøg om at blive en del af byens styrke.</p>
+                        <div style="margin: 20px 0; display: flex; align-items: center; gap: 10px;">
+                            <span style="background: rgba(0, 255, 179, 0.1); color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">ÅBEN</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Start Ansøgning</button>
+                    </div>
+                </div>
+
+                <!-- EMS -->
+                <div class="shop-card glass">
+                    <div class="shop-img"><i class="ph ph-first-aid"></i></div>
+                    <div class="shop-info">
+                        <h3>Læge / EMS</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">Red liv i byen. Vi søger dedikerede medarbejdere til sundhedsvæsenet.</p>
+                        <div style="margin: 20px 0; display: flex; align-items: center; gap: 10px;">
+                            <span style="background: rgba(255, 50, 50, 0.1); color: #ff3232; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">LUKKET</span>
+                        </div>
+                        <button class="btn btn-outline" style="width: 100%; border-color: #333; color: #555; cursor: not-allowed;">Lukket pt.</button>
+                    </div>
+                </div>
+
+                <!-- Staff -->
+                <div class="shop-card glass">
+                    <div class="shop-img"><i class="ph ph-users-three"></i></div>
+                    <div class="shop-info">
+                        <h3>Staff Team</h3>
+                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">Vil du hjælpe med at drive serveren? Vi søger altid modne supportere.</p>
+                        <div style="margin: 20px 0; display: flex; align-items: center; gap: 10px;">
+                            <span style="background: rgba(0, 255, 179, 0.1); color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">ÅBEN</span>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;">Start Ansøgning</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Preview (Modal style) -->
+            <div id="applicationForm" class="glass" style="margin-top: 100px; padding: 50px; display: none;">
+                <h2 style="margin-bottom: 30px;">Ansøgning: <span class="gradient-text">Whitelist</span></h2>
+                <div style="background: #151515; height: 10px; border-radius: 5px; margin-bottom: 40px; overflow: hidden;">
+                    <div style="width: 30%; height: 100%; background: var(--primary); box-shadow: 0 0 10px var(--primary);"></div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label>Dit Navn / Discord Tag</label>
+                        <input type="text" placeholder="F.eks. Zolex#0001">
+                    </div>
+                    <div class="form-group">
+                        <label>Hvor gammel er du?</label>
+                        <input type="number" placeholder="Din alder...">
+                    </div>
+                    <div class="form-group">
+                        <label>Beskriv din karakter (Backstory)</label>
+                        <textarea rows="5" placeholder="Fortæl os om din karakters historie, mål og personlighed..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Hvorfor skal vi vælge lige netop dig?</label>
+                        <textarea rows="4" placeholder="Hvad bringer du til serveren?"></textarea>
+                    </div>
+                    <div style="display: flex; gap: 20px; margin-top: 40px;">
+                        <button type="button" class="btn btn-outline">Annuller</button>
+                        <button type="submit" class="btn btn-primary">Indsend Ansøgning</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Imperial Roleplay. Alle rettigheder forbeholdes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple toggle to show form
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            if(btn.innerText === 'Start Ansøgning') {
+                btn.addEventListener('click', () => {
+                    document.getElementById('applicationForm').style.display = 'block';
+                    window.scrollTo({
+                        top: document.getElementById('applicationForm').offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

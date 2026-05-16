@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regelsæt | Imperial Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <header id="main-header" class="scrolled">
+        <div class="container header-flex">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Logo" style="height: 40px;"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="rules.html" class="active">Regelsæt</a></li>
+                    <li><a href="applications.html">Ansøgninger</a></li>
+                    <li><a href="staff.html">Staff Team</a></li>
+                    <li><a href="factions.html">Fraktioner</a></li>
+                    <li><a href="shop.html">Butik</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="fiverp://connect/imperialrp" class="btn btn-primary">Join Server</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 180px;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Server <span class="gradient-text">Regelsæt</span></h2>
+                <p style="color: var(--text-dim);">Læs venligst reglerne grundigt. Uvidenhed fritager ikke for straf.</p>
+            </div>
+
+            <div class="rules-layout">
+                <aside class="rules-sidebar">
+                    <div class="glass" style="padding: 24px;">
+                        <h4 style="color: var(--primary); margin-bottom: 20px; font-size: 1.1rem;">Navigation</h4>
+                        <ul style="display: grid; gap: 8px;">
+                            <li><a href="#generelle" class="active" style="display: block; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.03);">Generelle Regler</a></li>
+                            <li><a href="#rp-regler" style="display: block; padding: 12px; border-radius: 8px;">RP Regler</a></li>
+                            <li><a href="#fear-rp" style="display: block; padding: 12px; border-radius: 8px;">FearRP / NLR</a></li>
+                            <li><a href="#kriminalitet" style="display: block; padding: 12px; border-radius: 8px;">Kriminalitet</a></li>
+                        </ul>
+                        <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);">
+                            <label style="display: flex; gap: 12px; align-items: flex-start; cursor: pointer; font-size: 0.85rem; color: var(--text-dim);">
+                                <input type="checkbox" style="margin-top: 4px;">
+                                <span>Jeg har læst og accepteret reglerne</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="rules-content">
+                    <section id="generelle" class="rule-category">
+                        <h3>Generelle Regler</h3>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>§1.1 Respektfuld Tone</span>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>§1.2 Mikrofon Krav</span>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>§1.3 Exploiting & Cheating</span>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="rp-regler" class="rule-category">
+                        <h3>RP Regler</h3>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>§2.1 RDM (Random Deathmatch)</span>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>§2.2 VDM (Vehicle Deathmatch)</span>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>§2.3 Metagaming</span>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="fear-rp" class="rule-category">
+                        <h3>FearRP / NLR</h3>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>§3.1 FearRP</span>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>§3.2 New Life Rule (NLR)</span>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: 100px; padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2026 Imperial Roleplay. Alle rettigheder forbeholdes.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

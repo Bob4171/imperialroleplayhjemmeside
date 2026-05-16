@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | Imperial Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .ticket-chat {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            background: #080808;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+        .chat-header {
+            padding: 15px 25px;
+            background: #121212;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-body {
+            flex: 1;
+            padding: 25px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .chat-footer {
+            padding: 20px;
+            background: #121212;
+            display: flex;
+            gap: 15px;
+        }
+        .msg {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+        }
+        .msg-staff {
+            align-self: flex-start;
+            background: var(--glass-bg);
+            border-left: 3px solid var(--primary);
+        }
+        .msg-user {
+            align-self: flex-end;
+            background: var(--primary);
+            color: #000;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <header id="main-header" class="scrolled">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="rules.html">Regelsæt</a></li>
+                    <li><a href="applications.html">Ansøgninger</a></li>
+                    <li><a href="staff.html">Staff Team</a></li>
+                    <li><a href="factions.html">Fraktioner</a></li>
+                    <li><a href="shop.html">Butik</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                </ul>
+            </nav>
+            <div class="header-btns">
+                <a href="login.html" class="btn btn-outline"><i class="ph ph-user"></i> Login</a>
+                <a href="fiverp://connect/imperialrp" class="btn btn-primary"><i class="ph ph-play"></i> Join Server</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 150px;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Hjælp & <span class="gradient-text">Support</span></h1>
+                <p style="color: var(--text-gray);">Har du problemer eller spørgsmål? Vi er her for at hjælpe.</p>
+            </div>
+
+            <div class="rules-layout">
+                <aside class="rules-nav">
+                    <div class="glass" style="padding: 20px;">
+                        <h4 style="margin-bottom: 20px; color: var(--primary);">Tickets</h4>
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 10px;">AKTIVE TICKETS</div>
+                            <div class="glass" style="padding: 10px; font-size: 0.85rem; cursor: pointer; border-color: var(--primary);">
+                                <div style="font-weight: 700;">#4829 - Refund Request</div>
+                                <div style="color: var(--primary); font-size: 0.75rem;">Status: Venter på svar</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; font-size: 0.8rem;"><i class="ph ph-plus"></i> Ny Ticket</button>
+                    </div>
+
+                    <div class="glass" style="margin-top: 20px; padding: 20px; text-align: center;">
+                        <i class="ph ph-discord-logo" style="font-size: 2.5rem; color: #5865F2; margin-bottom: 10px; display: block;"></i>
+                        <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 15px;">Hurtigst hjælp får du på vores Discord.</p>
+                        <a href="#" class="btn btn-discord" style="width: 100%; font-size: 0.8rem;">Join Discord</a>
+                    </div>
+                </aside>
+
+                <div class="support-content">
+                    <div class="ticket-chat">
+                        <div class="chat-header">
+                            <div>
+                                <h4 style="color: var(--primary);">#4829 - Refund Request</h4>
+                                <div style="font-size: 0.75rem; color: var(--text-gray);">Oprettet: I dag, 12:45</div>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <button class="btn btn-outline" style="padding: 5px 12px; font-size: 0.7rem; border-color: #ff3232; color: #ff3232;">Luk Ticket</button>
+                            </div>
+                        </div>
+                        <div class="chat-body">
+                            <div class="msg msg-user">
+                                Hej Support. Jeg mistede min bil pga. en server crash tidligere i dag. Kan jeg få en refund?
+                            </div>
+                            <div class="msg msg-staff">
+                                <div style="font-weight: 700; color: var(--primary); margin-bottom: 5px;">Morten (Head Admin)</div>
+                                Hej Zolex. Det er vi ked af at høre. Har du et klip eller bevis på at du mistede den under crashet?
+                            </div>
+                            <div class="msg msg-user">
+                                Ja, jeg har uploadet det her: youtube.com/watch?v=...
+                            </div>
+                        </div>
+                        <div class="chat-footer">
+                            <input type="text" placeholder="Skriv din besked her..." style="flex: 1; background: #151515; border: 1px solid var(--glass-border); border-radius: 8px; color: white; padding: 0 15px; outline: none;">
+                            <button class="btn btn-primary" style="padding: 0 25px;"><i class="ph ph-paper-plane-tilt"></i></button>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 80px;">
+                        <h2 style="margin-bottom: 30px;">Ofte Stillede <span class="gradient-text">Spørgsmål</span></h2>
+                        <div class="rule-item">
+                            <div class="rule-header">
+                                <h4>Hvordan joiner jeg serveren?</h4>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-header">
+                                <h4>Hvad gør jeg hvis jeg bliver bannet?</h4>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                        <div class="rule-item">
+                            <div class="rule-header">
+                                <h4>Hvordan bliver jeg en del af Politiet?</h4>
+                                <i class="ph ph-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Imperial Roleplay. Alle rettigheder forbeholdes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

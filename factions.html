@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraktioner | Imperial Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .faction-hero {
+            height: 400px;
+            background: linear-gradient(rgba(13,13,13,0.8), rgba(13,13,13,0.8)), url('assets/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 80px;
+            border-bottom: 1px solid var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+
+    <header id="main-header" class="scrolled">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/logo.png" alt="Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Forside</a></li>
+                    <li><a href="rules.html">Regelsæt</a></li>
+                    <li><a href="applications.html">Ansøgninger</a></li>
+                    <li><a href="staff.html">Staff Team</a></li>
+                    <li><a href="factions.html" class="active">Fraktioner</a></li>
+                    <li><a href="shop.html">Butik</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="header-btns">
+                <a href="login.html" class="btn btn-outline"><i class="ph ph-user"></i> Login</a>
+                <a href="fiverp://connect/imperialrp" class="btn btn-primary"><i class="ph ph-play"></i> Join Server</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="faction-hero">
+        <div class="container">
+            <h1 style="font-size: 4rem; margin-bottom: 20px;">Byens <span class="gradient-text">Fraktioner</span></h1>
+            <p style="max-width: 600px; margin: 0 auto; color: var(--text-gray);">Opdag de mange forskellige grupperinger og fraktioner der holder Imperial kørende.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="shop-grid" style="margin-bottom: 100px;">
+            <!-- Politiet -->
+            <div class="shop-card glass">
+                <div class="shop-img" style="background: linear-gradient(rgba(0,100,255,0.2), transparent);"><i class="ph ph-shield-check" style="opacity: 1; color: #0088ff;"></i></div>
+                <div class="shop-info">
+                    <h3 style="color: #0088ff;">Politiet (LSPD)</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">LSPD sikrer ro og orden i gaderne. Vi søger altid skarpe officerer der kan holde hovedet koldt.</p>
+                    <div style="margin: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                        <div style="font-size: 0.8rem; color: var(--text-gray);">LEDER: <span style="color: white; font-weight: 700;">Frank Jensen</span></div>
+                    </div>
+                    <a href="applications.html" class="btn btn-primary" style="width: 100%; background: #0088ff;">Ansøg Her</a>
+                </div>
+            </div>
+
+            <!-- EMS -->
+            <div class="shop-card glass">
+                <div class="shop-img" style="background: linear-gradient(rgba(255,50,50,0.2), transparent);"><i class="ph ph-first-aid" style="opacity: 1; color: #ff3232;"></i></div>
+                <div class="shop-info">
+                    <h3 style="color: #ff3232;">EMS / Læge</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">Vores sundhedsvæsen er rygraden i byen. Som EMS redder du liv hver eneste dag.</p>
+                    <div style="margin: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                        <div style="font-size: 0.8rem; color: var(--text-gray);">LEDER: <span style="color: white; font-weight: 700;">Sarah Miller</span></div>
+                    </div>
+                    <a href="applications.html" class="btn btn-primary" style="width: 100%; background: #ff3232;">Ansøg Her</a>
+                </div>
+            </div>
+
+            <!-- Mekaniker -->
+            <div class="shop-card glass">
+                <div class="shop-img" style="background: linear-gradient(rgba(255,150,0,0.2), transparent);"><i class="ph ph-wrench" style="opacity: 1; color: #ff9600;"></i></div>
+                <div class="shop-info">
+                    <h3 style="color: #ff9600;">Mekanikerne</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">Har du styr på motorer og styling? Bliv en del af byens mest populære værksted.</p>
+                    <div style="margin: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                        <div style="font-size: 0.8rem; color: var(--text-gray);">LEDER: <span style="color: white; font-weight: 700;">Mads Auto</span></div>
+                    </div>
+                    <a href="applications.html" class="btn btn-primary" style="width: 100%; background: #ff9600;">Ansøg Her</a>
+                </div>
+            </div>
+
+            <!-- Bandemiljø -->
+            <div class="shop-card glass">
+                <div class="shop-img" style="background: linear-gradient(rgba(0,255,179,0.1), transparent);"><i class="ph ph-skull" style="opacity: 1; color: var(--primary);"></i></div>
+                <div class="shop-info">
+                    <h3>Bandemiljøet</h3>
+                    <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 10px;">Vil du drive kriminalitet på et højere plan? Opret din egen bande eller ansøg om at blive officiel.</p>
+                    <div style="margin: 20px 0; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                        <div style="font-size: 0.8rem; color: var(--text-gray);">STATUS: <span style="color: white; font-weight: 700;">Søger Grupperinger</span></div>
+                    </div>
+                    <a href="applications.html" class="btn btn-primary" style="width: 100%;">Opret Bande</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Imperial Roleplay. Alle rettigheder forbeholdes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
