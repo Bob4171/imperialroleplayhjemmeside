@@ -9,12 +9,24 @@
 </head>
 <body>
 
+    <!-- Loading Screen -->
+    <div id="loader">
+        <img src="assets/logo.png" class="loader-logo" alt="Imperial Logo">
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.8rem; color: var(--primary); letter-spacing: 2px; text-transform: uppercase;">Loading Universe...</p>
+    </div>
+
     <canvas id="particles-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
 
     <header id="main-header">
         <div class="container header-flex">
             <div class="logo">
-                <a href="index.html"><img src="assets/logo.png" alt="Imperial RP" style="height: 45px;"></a>
+                <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+                    <img src="assets/logo.png" alt="Imperial RP" style="height: 50px; filter: drop-shadow(0 0 10px var(--primary));">
+                    <span class="title" style="font-size: 1.2rem; font-weight: 900; letter-spacing: 1px;">IMPERIAL <span style="color: var(--primary);">RP</span></span>
+                </a>
             </div>
             <nav>
                 <ul>
@@ -27,28 +39,35 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <a href="login.html" class="btn btn-outline"><i class="ph ph-user"></i> Login</a>
-                <a href="fiverp://connect/imperialrp" class="btn btn-primary">Join Server</a>
+                <a href="login.html" class="btn btn-outline" style="border-radius: 50px;"><i class="ph ph-user"></i> Login</a>
+                <a href="fiverp://connect/imperialrp" class="btn btn-primary shimmer-btn" style="border-radius: 50px; padding: 12px 30px;">Join Server</a>
             </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-bg"></div>
-            <div class="container">
+            <div class="hero-bg" style="background: linear-gradient(to bottom, rgba(5,5,5,0.4), var(--bg)), url('assets/hero-bg.png'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.6;"></div>
+            <div class="container" style="position: relative; z-index: 10;">
                 <div class="hero-content">
-                    <h1 class="title">Danmarks mest <span class="gradient-text">seriøse</span><br>RP oplevelse</h1>
-                    <p>Imperial Roleplay bringer kvalitet, action og realistisk RP sammen i én server. Vi fokuserer på community og unikke oplevelser.</p>
-                    <div style="display: flex; gap: 16px; justify-content: center;">
-                        <a href="fiverp://connect/imperialrp" class="btn btn-primary" style="padding: 16px 32px; font-size: 1rem;">Start Din Rejse</a>
-                        <a href="rules.html" class="btn btn-outline" style="padding: 16px 32px; font-size: 1rem;">Se Reglerne</a>
+                    <h1 class="title" style="margin-bottom: 10px;">Danmarks mest</h1>
+                    <h1 class="title gradient-text" style="font-size: clamp(4rem, 12vw, 8rem); line-height: 0.8; margin-bottom: 30px;">Seriøse RP</h1>
+                    <p style="font-size: 1.2rem; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+                        Velkommen til Imperial. En verden skabt til seriøsitet, action og de mest unikke RP historier i Danmark. Din rejse starter her.
+                    </p>
+                    <div style="display: flex; gap: 24px; justify-content: center;">
+                        <a href="fiverp://connect/imperialrp" class="btn btn-primary shimmer-btn" style="padding: 20px 45px; font-size: 1.1rem; border-radius: 12px;">
+                            <i class="ph ph-rocket-launch"></i> Start Din Rejse
+                        </a>
+                        <a href="rules.html" class="btn btn-outline" style="padding: 20px 45px; font-size: 1.1rem; border-radius: 12px;">
+                            <i class="ph ph-scroll"></i> Se Regelsæt
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="stats-section">
+        <section style="margin-top: -100px; position: relative; z-index: 20;">
             <div class="container">
                 <div class="stats-container">
                     <div class="stat-card glass">
@@ -57,44 +76,51 @@
                     </div>
                     <div class="stat-card glass">
                         <div class="stat-value counter" data-target="24">0</div>
-                        <div class="stat-label">Aktive Politifolk</div>
+                        <div class="stat-label">Aktive Betjente</div>
                     </div>
                     <div class="stat-card glass">
                         <div class="stat-value counter" data-target="12">0</div>
                         <div class="stat-label">EMS Online</div>
                     </div>
                     <div class="stat-card glass">
-                        <div class="stat-value" style="color: var(--primary);">ONLINE</div>
+                        <div class="stat-value text-glow" style="color: var(--primary);">ACTIVE</div>
                         <div class="stat-label">Server Status</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section style="padding: 120px 0;">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div>
-                    <h2 style="font-size: 3rem; margin-bottom: 24px;">Hvad er <span class="gradient-text">Imperial?</span></h2>
-                    <p style="color: var(--text-dim); margin-bottom: 32px; font-size: 1.1rem;">
-                        Vi har skabt en platform hvor seriøsitet og sjov går hånd i hånd. Med custom-built scripts og et erfarent staff-team, sikrer vi den bedste RP-oplevelse i Danmark.
-                    </p>
-                    <div style="display: grid; gap: 16px;">
-                        <div style="display: flex; gap: 16px; align-items: center;">
-                            <i class="ph ph-check-circle" style="color: var(--primary); font-size: 1.5rem;"></i>
-                            <span>Stabil økonomi og realistisk job-system</span>
-                        </div>
-                        <div style="display: flex; gap: 16px; align-items: center;">
-                            <i class="ph ph-check-circle" style="color: var(--primary); font-size: 1.5rem;"></i>
-                            <span>Avanceret politi- og hospitalssystem</span>
-                        </div>
-                        <div style="display: flex; gap: 16px; align-items: center;">
-                            <i class="ph ph-check-circle" style="color: var(--primary); font-size: 1.5rem;"></i>
-                            <span>Unikke biler og tøjpakker</span>
+        <section style="padding: 150px 0;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;">
+                    <div class="fade-in-element">
+                        <h2 class="neon-line" style="font-size: 3.5rem; margin-bottom: 30px;">Hvorfor <span class="gradient-text">Imperial?</span></h2>
+                        <p style="font-size: 1.15rem; color: var(--text-dim); margin-bottom: 40px; line-height: 2;">
+                            Vi går ikke på kompromis. Vores server er bygget på fundamentet af seriøsitet. Vi har fjernet alt "støj" og fokuseret 100% på at skabe de bedste rammer for din karakter.
+                        </p>
+                        <div style="display: grid; gap: 24px;">
+                            <div class="glass" style="padding: 24px; display: flex; gap: 20px; align-items: center;">
+                                <i class="ph ph-cpu" style="font-size: 2.5rem; color: var(--primary);"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Custom Framework</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-dim);">Unikke scripts du ikke finder andre steder.</p>
+                                </div>
+                            </div>
+                            <div class="glass" style="padding: 24px; display: flex; gap: 20px; align-items: center;">
+                                <i class="ph ph-shield-check" style="font-size: 2.5rem; color: var(--secondary);"></i>
+                                <div>
+                                    <h4 style="margin-bottom: 5px;">Aktivt Staff Team</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-dim);">Retfærdighed og hurtig hjælp døgnet rundt.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="glass" style="padding: 12px; transform: perspective(1000px) rotateY(-10deg);">
-                    <img src="assets/hero-bg.png" style="width: 100%; border-radius: 12px; display: block;" alt="Preview">
+                    <div class="fade-in-element" style="position: relative;">
+                        <div class="glass" style="padding: 15px; border-radius: 30px; transform: rotate(3deg);">
+                            <img src="assets/hero-bg.png" style="width: 100%; border-radius: 20px; display: block;" alt="Action">
+                        </div>
+                        <div style="position: absolute; -z-index: 1; top: 20%; left: 20%; width: 60%; height: 60%; background: var(--primary); filter: blur(100px); opacity: 0.2;"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -104,28 +130,40 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-logo">
-                    <img src="assets/logo.png" alt="Logo">
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Imperial Roleplay er Danmarks førende FiveM server med fokus på kvalitet og seriøsitet.</p>
+                    <img src="assets/logo.png" style="height: 50px; margin-bottom: 20px;" alt="Logo">
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 2;">
+                        Imperial Roleplay er skabt af spillere, for spillere. Vi stræber efter at være Danmarks mest seriøse og innovative FiveM fællesskab.
+                    </p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 24px;">Links</h4>
-                    <ul style="display: grid; gap: 12px; color: var(--text-dim); font-size: 0.9rem;">
+                    <h4 style="margin-bottom: 30px; color: var(--primary); letter-spacing: 2px;">NAVIGATION</h4>
+                    <ul style="display: grid; gap: 15px; font-size: 0.9rem; color: var(--text-dim);">
                         <li><a href="rules.html">Regelsæt</a></li>
                         <li><a href="applications.html">Ansøgninger</a></li>
                         <li><a href="shop.html">Butik</a></li>
+                        <li><a href="staff.html">Staff Team</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 24px;">Socials</h4>
-                    <ul style="display: flex; gap: 16px; font-size: 1.5rem;">
-                        <li><a href="#"><i class="ph ph-tiktok-logo"></i></a></li>
-                        <li><a href="#"><i class="ph ph-discord-logo"></i></a></li>
-                        <li><a href="#"><i class="ph ph-youtube-logo"></i></a></li>
+                    <h4 style="margin-bottom: 30px; color: var(--primary); letter-spacing: 2px;">RESOURCER</h4>
+                    <ul style="display: grid; gap: 15px; font-size: 0.9rem; color: var(--text-dim);">
+                        <li><a href="#">Server Status</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Support</a></li>
                     </ul>
                 </div>
+                <div>
+                    <h4 style="margin-bottom: 30px; color: var(--primary); letter-spacing: 2px;">SOCIALS</h4>
+                    <div style="display: flex; gap: 20px; font-size: 1.8rem;">
+                        <a href="#" style="color: #fff;"><i class="ph ph-tiktok-logo"></i></a>
+                        <a href="#" style="color: #5865F2;"><i class="ph ph-discord-logo"></i></a>
+                        <a href="#" style="color: #FF0000;"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
             </div>
-            <div style="text-align: center; padding-top: 40px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.8rem;">
-                &copy; 2026 Imperial Roleplay. Alle rettigheder forbeholdes.
+            <div style="text-align: center; padding-top: 50px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.8rem; letter-spacing: 1px;">
+                &copy; 2026 IMPERIAL ROLEPLAY. ALLE RETTIGHEDER FORBEHOLDES.
             </div>
         </div>
     </footer>

@@ -1,4 +1,37 @@
-// Header Scroll Effect
+// Advanced Imperial RP Script
+
+// 1. Loading Screen Logic
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    const progress = document.querySelector('.loader-progress');
+    
+    let width = 0;
+    const interval = setInterval(() => {
+        if (width >= 100) {
+            clearInterval(interval);
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 800);
+            }, 500);
+        } else {
+            width += Math.random() * 10;
+            if(width > 100) width = 100;
+            progress.style.width = width + '%';
+        }
+    }, 100);
+});
+
+// 2. Mouse Glow Trail
+const cursorGlow = document.createElement('div');
+cursorGlow.className = 'cursor-glow';
+document.body.appendChild(cursorGlow);
+
+window.addEventListener('mousemove', (e) => {
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top = e.clientY + 'px';
+});
+
+// 3. Header Scroll Effect
 const header = document.getElementById('main-header');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
@@ -8,11 +41,11 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Particles Effect
+// 4. Particles Effect (Refined)
 const canvas = document.getElementById('particles-canvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
-const particleCount = 40;
+const particleCount = 50;
 
 const resize = () => {
     canvas.width = window.innerWidth;
@@ -28,10 +61,10 @@ class Particle {
     reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 1.5 + 0.5;
-        this.speedX = Math.random() * 0.4 - 0.2;
-        this.speedY = Math.random() * 0.4 - 0.2;
-        this.opacity = Math.random() * 0.3 + 0.1;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = Math.random() * 0.6 - 0.3;
+        this.speedY = Math.random() * 0.6 - 0.3;
+        this.opacity = Math.random() * 0.4 + 0.1;
     }
     update() {
         this.x += this.speedX;
@@ -58,36 +91,10 @@ const animate = () => {
 };
 animate();
 
-// Stats Counter
-const counters = document.querySelectorAll('.counter');
-const startCounters = () => {
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const inc = target / 100;
-        if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(startCounters, 20);
-        } else {
-            counter.innerText = target;
-        }
-    });
-};
-
-const statsSection = document.querySelector('.stats-container');
-if (statsSection) {
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            startCounters();
-            observer.unobserve(statsSection);
-        }
-    }, { threshold: 0.5 });
-    observer.observe(statsSection);
-}
-
-// Fade-in animation on scroll
+// 5. Intersection Observer for Animations
 const observerOptions = {
-    threshold: 0.1
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -98,23 +105,37 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('section, .glass').forEach(el => {
+document.querySelectorAll('section, .glass, .stat-card, h2').forEach(el => {
     el.classList.add('fade-in-element');
     observer.observe(el);
 });
 
-// Accordion logic for Rules
-document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const item = header.parentElement;
-        const icon = header.querySelector('i');
-        
-        // This is a mockup, in a real app we'd toggle a content div
-        header.classList.toggle('active');
-        if (icon.classList.contains('ph-plus')) {
-            icon.classList.replace('ph-plus', 'ph-minus');
-        } else {
-            icon.classList.replace('ph-minus', 'ph-plus');
-        }
+// 6. Stats Counter
+const counters = document.querySelectorAll('.counter');
+const startCounters = () => {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const updateCount = () => {
+            const count = +counter.innerText;
+            const inc = target / 100;
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
     });
-});
+};
+
+const statsSection = document.querySelector('.stats-container');
+if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            startCounters();
+            statsObserver.unobserve(statsSection);
+        }
+    }, { threshold: 0.5 });
+    statsObserver.observe(statsSection);
+}

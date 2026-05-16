@@ -1,23 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-
 :root {
-    --bg: #080808;
-    --card-bg: rgba(15, 15, 15, 0.6);
+    --bg: #050505;
+    --card-bg: rgba(10, 10, 10, 0.4);
     --primary: #00ffb3;
     --primary-rgb: 0, 255, 179;
     --secondary: #00e5ff;
+    --accent: #7000ff;
     --text-main: #ffffff;
-    --text-dim: #94a3b8;
-    --border: rgba(255, 255, 255, 0.05);
-    --neon-border: rgba(0, 255, 179, 0.2);
-    --glow: 0 0 20px rgba(0, 255, 179, 0.15);
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --text-dim: rgba(255, 255, 255, 0.6);
+    --border: rgba(255, 255, 255, 0.08);
+    --neon-glow: 0 0 20px rgba(0, 255, 179, 0.3);
+    --glass-blur: blur(20px);
+    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {
@@ -26,6 +19,62 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    cursor: crosshair; /* Gaming vibe */
+}
+
+/* Mouse Trail */
+.cursor-glow {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, transparent 70%);
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.3s, height 0.3s;
+}
+
+/* Loading Screen */
+#loader {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease-out;
+}
+
+.loader-logo {
+    width: 150px;
+    filter: drop-shadow(0 0 20px var(--primary));
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.loader-bar {
+    width: 200px;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-progress {
+    position: absolute;
+    top: 0; left: 0; height: 100%;
+    width: 0%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+    transition: width 0.5s ease;
 }
 
 h1, h2, h3, h4, .title {
@@ -146,32 +195,70 @@ nav ul a:hover, nav ul a.active {
     color: white;
 }
 
-/* Hero */
+/* Hero Improvements */
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    padding: 120px 0 60px;
-    background: radial-gradient(circle at 50% 50%, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%);
+    overflow: hidden;
 }
 
 .hero-bg {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1;
-    opacity: 0.4;
-    background: linear-gradient(to bottom, transparent, var(--bg)), url('assets/hero-bg.png');
-    background-size: cover;
-    background-position: center;
+    animation: slowZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    line-height: 1;
-    margin-bottom: 24px;
+    font-size: clamp(3rem, 10vw, 6rem);
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.shimmer-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shimmerLoop 3s infinite;
+}
+
+@keyframes shimmerLoop {
+    0% { transform: translate(-100%, -100%) rotate(45deg); }
+    100% { transform: translate(100%, 100%) rotate(45deg); }
+}
+
+/* Neon Lines */
+.neon-line {
+    position: relative;
+}
+
+.neon-line::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 15px var(--primary);
+    transition: width 0.8s ease;
+}
+
+.visible .neon-line::after {
+    width: 100px;
 }
 
 .hero p {
